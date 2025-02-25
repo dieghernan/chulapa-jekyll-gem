@@ -1,6 +1,8 @@
 source 'https://rubygems.org'	
 # Latest jekyll release
 gem "jekyll", "~> 4.4.1" 
+gem "chulapa-jekyll", "~> 2.0.0"
+
 
 group :jekyll_plugins do
   gem 'jekyll-algolia', '~> 1.0'

@@ -1,6 +1,8 @@
+theme: chulapa-jekyll
 github: [metadata]
+repository: dieghernan/chulapa-jekyll-101
 
-remote_theme: dieghernan/chulapa
+# remote_theme: dieghernan/chulapa (comment or delete this line)
 
 # Find errors on this file with http://www.yamllint.com/
 
@@ -16,7 +18,6 @@ subtitle                : Chulapa Jekyll Theme starter pack    #default [your-re
 description             : Chulapa Jekyll Theme starter pack #default [your-repository-tagline]
 url                     :     #See baseurl - On Github Pages you may leave it blank - If you use CNAME use your domain
 baseurl                 :     #On Github Pages you may leave it blank. Have a look to: https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/
-repository              :     dieghernan/chulapa-101 # Needs to be set (e.g. dieghernan/chulapa)
 words_per_minute        :     #default[200]
 timezone                :     #"Europe/Madrid ,see https://jekyllrb.com/docs/configuration/options/ and https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -129,7 +130,7 @@ footer:
   links:
     - label : Repo on Github # Label
       icon  : fab fa-github # Fontawesome 5 icon
-      url   : https://github.com/dieghernan/chulapa-101 # A link or email: https://twitter.com/jack, mail@example.com
+      url   : https://github.com/dieghernan/dieghernan/chulapa-jekyll-gem # A link or email: https://twitter.com/jack, mail@example.com
     - label: "RSS"
       icon: "fa fa-rss"
       url:  "./atom.xml"
@@ -143,10 +144,10 @@ googlefonts:
 # Theme and colors
 chulapa-skin: 
   highlight     :  # default["default"]
-  skin         :  # Optional predefined skins
+  skin         :  academia # Optional predefined skins
   autothemer    :  true # Bool: Use autotheming
   vars          :    
-    primary     : "#87cefa" #default ["#007bff"] - Bootstrap blue
+    primary     : lightskyblue #default ["#007bff"] - Bootstrap blue
     
 # D. Jekyll Defaults and collections: see https://jekyllrb.com/
 
