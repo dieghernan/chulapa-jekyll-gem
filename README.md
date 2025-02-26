@@ -20,7 +20,10 @@ repository: dieghernan/chulapa-jekyll-101
 # remote_theme: dieghernan/chulapa (comment or delete this line)
 
 ...
+url                     : https://dieghernan.github.io
+baseurl                 : chulapa-jekyll-gem
 
+...
 ```
 
 
