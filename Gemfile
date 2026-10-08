@@ -1,7 +1,7 @@
 source 'https://rubygems.org'	
 # Latest jekyll release
 gem "jekyll", "~> 4.4.1" 
-gem "chulapa-jekyll", "~> 2.0.0"
+gem "chulapa-jekyll", "~> 2.1"
 
 
 group :jekyll_plugins do
@@ -13,10 +13,13 @@ end
 
 # Hard dependencies
 gem 'jekyll-paginate'
-gem 'jekyll-remote-theme'
 gem 'kramdown-parser-gfm'
 
 # Additional dependencies
 gem 'faraday-retry'
 gem "webrick"
 gem 'tzinfo-data'
+
+# Standard library gems required by plugins on Ruby 3.4.
+gem 'ostruct'
+gem 'fiddle'

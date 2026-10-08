@@ -1,100 +1,100 @@
+# Chulapa from RubyGems
+
+This repository demonstrates the **chulapa-jekyll** gem on [GitHub Pages](https://dieghernan.github.io/chulapa-jekyll-gem/) and [Netlify](https://chulapa-jekyll-gem.netlify.app/).
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3f36500-b15d-478f-8686-3d85ff93a7bb/deploy-status)](https://app.netlify.com/sites/chulapa-jekyll-gem/deploys)
 
-# chulapa-jekyll-101
+## Getting started
 
-This repo is the source of <https://dieghernan.github.io/chulapa-jekyll-101/>, that is a website deployed with GH Pages and Jekyll 4.0, using a GitHub Action.
-Additionally is deployed also in [Netlify](https://chulapa-jekyll-gem.netlify.app/) setting the Ruby version to 3.4 ([Environment variable method](https://docs.netlify.com/configure-builds/manage-dependencies/#ruby)).
+1. Clone or fork this repository.
+2. Edit `_config.yml`: set your title, description, author and repository.
+3. Set `url` to your site origin and `baseurl` to `/repository` for a project site or `""` for a root site. The Pages workflow sets the deployment base path automatically.
+4. Replace the sample posts, pages, images and navigation links.
+5. Enable GitHub Pages with **GitHub Actions** as its source.
 
-Uses the `chulapa-jekyll` gem (`">= 2.0.0"`)
+## Run locally
 
-## Setup
+Install Ruby and Bundler, then run these commands from the repository directory:
 
-### [_config.yml](_config.yml)
+```sh
+bundle install
+bundle exec jekyll serve --host localhost --baseurl ""
+```
 
+Open <http://localhost:4000>. Restart Jekyll after editing `_config.yml`.
+The Pages workflow uses Ruby 3.4 and this template uses Jekyll 4.4.
+
+## Configuration
+
+[`_config.yml`](_config.yml) follows the current Chulapa configuration
+structure:
+
+- Site settings, social locales, author and optional JSON-LD publisher.
+- Font Awesome, analytics, search and comment providers.
+- Navigation, footer, fonts, skins and syntax highlighting.
+- Pagination, collections, front matter defaults and Jekyll settings.
+
+Blank settings use theme defaults where available. Replace the sample content
+and identity settings before publishing. Image metadata must describe the actual
+image.
+
+The template uses Lunr search, four posts per blog page and a Markdown
+cheatsheet collection. Autotheming is enabled with `lightskyblue` as the primary
+color.
+
+## Page options and examples
+
+[`_pages/theme-options.md`](_pages/theme-options.md) demonstrates options
+available in Chulapa 2.1.0: independent `seo_title` and `og_title`, a shared
+`description`, social image metadata, page language, Open Graph locales,
+`og_type: article`, `schema_image` and video metadata.
+
+Use `canonical_url` only when a page should identify a different canonical URL;
+ordinary pages use their generated URL. Set `robots: "noindex, follow"` for
+pages such as search results, as shown in
+[`_pages/search.md`](_pages/search.md). Robots metadata does not remove a page
+from the sitemap; use `sitemap: false` when needed.
+
+[`_pages/minimal-header.md`](_pages/minimal-header.md) demonstrates `layout:
+minimal` with `show_header: true`.
+
+See the complete [page and snippet reference](https://dieghernan.github.io/chulapa/docs/04-layouts), [site configuration](https://dieghernan.github.io/chulapa/docs/02-config) and [theming guide](https://dieghernan.github.io/chulapa/docs/03-theming).
+
+## Included content
+
+- Sample posts, a paginated blog and year, category and tag archives.
+- Markdown and kramdown cheatsheets.
+- A Bootstrap component demo and a 404 page.
+- Lunr search, an Atom feed, an RSS feed and a generated sitemap.
+- Custom include hooks in [`_includes/custom/`](_includes/custom/) and CSS in [`assets/css/`](assets/css/).
+- Optional Algolia indexing configuration in [`algolia-search.yml`](algolia-search.yml).
+
+## Theme updates
+
+The site uses the installed RubyGems theme:
 
 ```yaml
 theme: chulapa-jekyll
-github: [metadata]
-repository: dieghernan/chulapa-jekyll-101
-
-# remote_theme: dieghernan/chulapa (comment or delete this line)
-
-...
-url                     : https://dieghernan.github.io
-baseurl                 : chulapa-jekyll-gem
-
-...
 ```
 
-
-### [Gemfile](Gemfile)
+The Gemfile allows Chulapa 2.1 and later 2.x releases:
 
 ```ruby
-source 'https://rubygems.org'	
-# Latest jekyll release
-gem "jekyll", "~> 4.4.1" 
-gem "chulapa-jekyll", "~> 2.0.0"
-
-...
+gem "chulapa-jekyll", "~> 2.1"
 ```
 
+Update the installed theme with:
 
-### [.github/workflows/build-chulapa-gh-pages.yml](.github/workflows/build-chulapa-gh-pages.yml)
-
-
-```yaml
-# Based on https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-name: Deploy Chulapa Jekyll site to Pages
-
-on:
-  push:
-    branches: ["master","main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to work out-of-the-box with jekyll-github-metadata
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 1 # Increment this number if you need to re-download cached gems
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        run: |
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        shell: bash
-        env:
-          JEKYLL_ENV: production
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-       
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
+```sh
+bundle update chulapa-jekyll
 ```
+
+Restart Jekyll or rebuild the site after updating. This installation uses the
+packaged theme rather than downloading the repository with `remote_theme`.
+Configuration, content and local overrides remain in this repository.
+
+The Pages workflow reads Ruby 3.4 from `.ruby-version`. Set Ruby 3.4 in your
+Netlify build environment as well. Netlify should run `bundle exec jekyll build`
+and publish `_site`. Deployment settings are managed in Netlify.
+
+Review the [Chulapa changelog](https://github.com/dieghernan/chulapa/blob/main/CHANGELOG.md) when updating.
