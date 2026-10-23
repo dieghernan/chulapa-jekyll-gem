@@ -31,6 +31,7 @@ og_image                :     #default[author.avatar (see below)] or [github-ava
 twitter_site            :     #Avoid @
 # Site author
 author:
+  url: # Optional author profile URL or site-relative path, e.g. /about/.
   name                  : Your Name # Name Surname Company
   avatar                :     # Try a square file. Info: Your github avatar on https://github.com/[USERNAME].png
   location              : "Madrid, Spain" # New York, USA
@@ -61,6 +62,10 @@ fa_v4_support: #Bool Add FontAwesome 4 support
 # Leave unused IDs empty. Setting both loads both snippets.
 gtag_id                 :
 analytics_id            :
+
+# Optional GoatCounter public HTTPS /count endpoint (2.2.0); production only.
+# Hosted: https://YOUR-CODE.goatcounter.com/count; self-hosted URLs work too.
+goatcounter:
 
 # A.4. Search engines
 # Create a page with layout: search and a permalink matching landing_page.
@@ -176,6 +181,14 @@ chulapa-skin:
   autothemer    :  true # Bool: Use autotheming
   vars          :
     primary     : "lightskyblue" #default ["#007bff"] - Bootstrap blue
+
+# Optional second skin (2.2.0). Leave blank to disable.
+chulapa-skin-dark:
+  skin:
+  highlight:
+  autothemer:
+  vars:
+    primary:
 
 # D. Jekyll defaults and collections
 # Demo collections and pagination below are examples for this repository.

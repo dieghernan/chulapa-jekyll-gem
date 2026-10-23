@@ -1,7 +1,7 @@
 source 'https://rubygems.org'	
 # Latest jekyll release
 gem "jekyll", "~> 4.4.1" 
-gem "chulapa-jekyll", "~> 2.1"
+gem "chulapa-jekyll", "~> 2.2"
 
 
 group :jekyll_plugins do

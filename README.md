@@ -77,10 +77,10 @@ The site uses the installed RubyGems theme:
 theme: chulapa-jekyll
 ```
 
-The Gemfile allows Chulapa 2.1 and later 2.x releases:
+The Gemfile requires Chulapa 2.2 or a later 2.x release:
 
 ```ruby
-gem "chulapa-jekyll", "~> 2.1"
+gem "chulapa-jekyll", "~> 2.2"
 ```
 
 Update the installed theme with:
@@ -98,3 +98,7 @@ Netlify build environment as well. Netlify should run `bundle exec jekyll build`
 and publish `_site`. Deployment settings are managed in Netlify.
 
 Review the [Chulapa changelog](https://github.com/dieghernan/chulapa/blob/main/CHANGELOG.md) when updating.
+
+## Chulapa 2.2 examples
+
+Open `/theme-22/` for Mermaid diagrams and a PhotoSwipe gallery. The configuration also lists optional GoatCounter analytics, an author profile URL and a second skin. These settings are blank until you choose to enable them; existing skin and search settings are preserved.
