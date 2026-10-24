@@ -76,7 +76,7 @@ goatcounter:
 # - simplesearch: https://github.com/christian-fei/Simple-Jekyll-Search
 # - fusejs: https://fusejs.io/
 search:
-  provider              : lunr # Enable search: lunr, algolia, google, simplesearch or fusejs.
+  provider              : fusejs # Enable search: lunr, algolia, google, simplesearch or fusejs.
   label                 :  #default ["Search"] Text on navbar when search is enabled
   landing_page          :  #default ["/search"] Link on navbar
   maxwords              :  #default [30] lunr simplesearch, fusejs only - May slow down your site build

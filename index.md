@@ -16,7 +16,7 @@ It includes:
 - A GitHub Actions workflow for deploying the site.
 - A demo showing Bootstrap components with the current skin settings.
 - Sample 404 page.
-- Site search with Lunr.
+- Site search with Fuse.js.
 - Sample `_config.yml` following the current <span class="chulapa">Chulapa</span> configuration. `primary` color is set to <span class="text-primary">LightSkyBlue</span> and `autothemer` is enabled. [Learn how to customize your site](https://dieghernan.github.io/chulapa/docs/03-theming).
 - Sample `algolia-search.yml` for using Algolia with GitHub Actions.
 - Sample files for extending the theme with your own scripts and CSS.

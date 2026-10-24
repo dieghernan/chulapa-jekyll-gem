@@ -38,7 +38,7 @@ Blank settings use theme defaults where available. Replace the sample content
 and identity settings before publishing. Image metadata must describe the actual
 image.
 
-The template uses Lunr search, four posts per blog page and a Markdown
+The template uses Fuse.js search, four posts per blog page and a Markdown
 cheatsheet collection. Autotheming is enabled with `lightskyblue` as the primary
 color.
 
@@ -65,7 +65,7 @@ See the complete [page and snippet reference](https://dieghernan.github.io/chula
 - Sample posts, a paginated blog and year, category and tag archives.
 - Markdown and kramdown cheatsheets.
 - A Bootstrap component demo and a 404 page.
-- Lunr search, an Atom feed, an RSS feed and a generated sitemap.
+- Fuse.js search, an Atom feed, an RSS feed and a generated sitemap.
 - Custom include hooks in [`_includes/custom/`](_includes/custom/) and CSS in [`assets/css/`](assets/css/).
 - Optional Algolia indexing configuration in [`algolia-search.yml`](algolia-search.yml).
 
