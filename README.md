@@ -1,6 +1,6 @@
 # Chulapa from RubyGems
 
-This repository demonstrates the **chulapa-jekyll** gem on [GitHub Pages](https://dieghernan.github.io/chulapa-jekyll-gem/) and [Netlify](https://chulapa-jekyll-gem.netlify.app/).
+This repository demonstrates the **chulapa-jekyll** 2.3 gem on [GitHub Pages](https://dieghernan.github.io/chulapa-jekyll-gem/) and [Netlify](https://chulapa-jekyll-gem.netlify.app/).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3f36500-b15d-478f-8686-3d85ff93a7bb/deploy-status)](https://app.netlify.com/sites/chulapa-jekyll-gem/deploys)
 
@@ -65,7 +65,7 @@ See the complete [page and snippet reference](https://dieghernan.github.io/chula
 - Sample posts, a paginated blog and year, category and tag archives.
 - Markdown and kramdown cheatsheets.
 - A Bootstrap component demo and a 404 page.
-- Fuse.js search, an Atom feed, an RSS feed and a generated sitemap.
+- Fuse.js search, Atom, RSS and JSON Feed, a subscription page at `/subscribe/` and XML and text sitemaps.
 - Custom include hooks in [`_includes/custom/`](_includes/custom/) and CSS in [`assets/css/`](assets/css/).
 - Optional Algolia indexing configuration in [`algolia-search.yml`](algolia-search.yml).
 
@@ -77,10 +77,10 @@ The site uses the installed RubyGems theme:
 theme: chulapa-jekyll
 ```
 
-The Gemfile requires Chulapa 2.2 or a later 2.x release:
+The Gemfile requires Chulapa 2.3 and accepts patch updates in that series.
 
 ```ruby
-gem "chulapa-jekyll", "~> 2.2"
+gem "chulapa-jekyll", "~> 2.3.0"
 ```
 
 Update the installed theme with:
